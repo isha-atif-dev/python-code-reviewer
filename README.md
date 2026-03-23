@@ -1,3 +1,14 @@
+---
+title: Python Code Reviewer
+emoji: 🐍
+colorFrom: purple
+colorTo: pink
+sdk: docker
+sdk_version: "3.10"
+app_file: app.py
+pinned: false
+---
+
 # 🐍 Python Code Reviewer
 
 An AI-powered Python code review tool that analyses your code across four dimensions.
