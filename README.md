@@ -29,7 +29,7 @@ An AI-powered Python code review tool that analyses your code across four dimens
 ## ⚙️ Run Locally
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/python-code-reviewer.git
+git clone https://github.com/isha-atif-dev/python-code-reviewer.git
 cd python-code-reviewer
 
 # Install dependencies
