@@ -237,11 +237,12 @@ st.markdown(
     letter-spacing: 0.3px;
     }
     div[data-testid="stElementContainer"]:has(.streamlit_code-editor) {
-    border: 1px solid rgba(255,255,255,0.25);  
-    border-radius: 5px;                      
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 14px;
     overflow: hidden;
-    background: transparent;                  
-    padding: 2px;
+    background: #07122b;
+    padding: 0px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
     }
 
     div[data-testid="stElementContainer"]:has(.streamlit_code-editor) iframe {
@@ -366,7 +367,7 @@ editor_result = code_editor(
             &.streamlit_code-editor .ace_text-layer {
                 color: #f8f8f2 !important;
             }
-            
+
             &.streamlit_code-editor,
             &.streamlit_code-editor * {
                 box-sizing: border-box !important;
