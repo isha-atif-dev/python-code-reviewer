@@ -237,12 +237,13 @@ st.markdown(
     letter-spacing: 0.3px;
     }
     div[data-testid="stElementContainer"]:has(.streamlit_code-editor) {
-    border: 1.5px solid rgba(255,255,255,0.15);
-    border-radius: 14px;
-    overflow: hidden;
-    background: #07122b;
-    padding: 0px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+        border: none;
+        border-radius: 14px;
+        overflow: hidden;
+        background: transparent;
+        padding: 0px;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     div[data-testid="stElementContainer"]:has(.streamlit_code-editor) iframe {
@@ -306,10 +307,13 @@ editor_result = code_editor(
     component_props={
         "style": {
             "width": "100%",
+            "maxWidth": "100%",
             "borderRadius": "14px",
             "overflow": "hidden",
             "background": "#07122b",
             "boxSizing": "border-box",
+            "border": "1.5px solid rgba(255,255,255,1)",
+            "boxShadow": "0 4px 24px rgba(0,0,0,0.3)",
         },
         "css": """
             font-weight: 500;
@@ -317,9 +321,15 @@ editor_result = code_editor(
             overflow: hidden;
 
             &.streamlit_code-editor {
-                border-radius: 14px;
-                overflow: hidden;
-                background: #07122b !important;
+                border-radius: 12px !important;
+                overflow: hidden !important;
+            }
+
+            &.streamlit_code-editor .drag-handle,
+            &.streamlit_code-editor [class*="drag"],
+            &.streamlit_code-editor [class*="resize"],
+            &.streamlit_code-editor [class*="handle"] {
+                display: none !important;
             }
 
             &.streamlit_code-editor .ace-streamlit-dark.ace_editor {
