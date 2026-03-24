@@ -354,13 +354,26 @@ editor_result = code_editor(
             &.streamlit_code-editor .ace_cursor {
                 color: #ffffff !important;
             }
+
+            &.streamlit_code-editor .ace_identifier {
+                color: #f8f8f2 !important;
+            }
+
+            &.streamlit_code-editor .ace_variable {
+                color: #f8f8f2 !important;
+            }
+
+            &.streamlit_code-editor .ace_text-layer {
+                color: #f8f8f2 !important;
+            }
+            
             &.streamlit_code-editor,
             &.streamlit_code-editor * {
                 box-sizing: border-box !important;
             }
 
             &.streamlit_code-editor {
-                border-radius: 14px !important;
+                border-radius: 12px !important;
                 overflow: hidden !important;
             }
         """,
