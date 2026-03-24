@@ -294,7 +294,7 @@ st.markdown(
 editor_result = code_editor(
     code="def my_function():\n    # paste your Python code here\n    pass",
     lang="python",
-    theme="tomorrow_night_bright",
+    theme="monokai",
     height=[14, 16],
     options={
         "wrap": True,
