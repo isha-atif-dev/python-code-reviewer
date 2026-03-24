@@ -237,10 +237,11 @@ st.markdown(
     letter-spacing: 0.3px;
     }
     div[data-testid="stElementContainer"]:has(.streamlit_code-editor) {
-    border: 1px solid rgba(255,255,255,0.20);
-    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.25);  /* thin clean border */
+    border-radius: 10px;                      /* sharper corners */
     overflow: hidden;
-    background: #07122b;
+    background: transparent;                  /* remove white box feel */
+    padding: 2px;
     }
 
     div[data-testid="stElementContainer"]:has(.streamlit_code-editor) iframe {
