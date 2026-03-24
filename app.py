@@ -1,10 +1,22 @@
 import json
+import time
 import streamlit as st
 from code_editor import code_editor
 from reviewer import review_code
 
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(page_title="Python Code Reviewer", page_icon="🐍", layout="wide")
+
+# ── Usage protection ──────────────────────────────────────────────────────────
+MAX_REQUESTS_PER_SESSION = 5
+COOLDOWN_SECONDS = 15
+MAX_CODE_LENGTH = 6000
+
+if "request_count" not in st.session_state:
+    st.session_state.request_count = 0
+
+if "last_request_time" not in st.session_state:
+    st.session_state.last_request_time = 0
 
 # ── Custom CSS ────────────────────────────────────────────────────────────────
 st.markdown(
@@ -368,11 +380,33 @@ col1, col2 = st.columns([5.2, 1.3])
 with col2:
     analyse_btn = st.button("🔍 Analyse My Code", key="analyse_main")
 
+st.caption(
+    f"Usage this session: {st.session_state.request_count}/{MAX_REQUESTS_PER_SESSION} • Cooldown: {COOLDOWN_SECONDS}s"
+)
+
 # ── Results ───────────────────────────────────────────────────────────────────
 if analyse_btn:
+    current_time = time.time()
+
     if not code_input.strip():
         st.warning("⚠️ Please paste some Python code first.")
+
+    elif len(code_input) > MAX_CODE_LENGTH:
+        st.warning(f"⚠️ Code is too long. Please keep it under {MAX_CODE_LENGTH} characters.")
+
+    elif st.session_state.request_count >= MAX_REQUESTS_PER_SESSION:
+        st.error(
+            f"❌ Session limit reached. You can only analyse {MAX_REQUESTS_PER_SESSION} times per session."
+        )
+
+    elif current_time - st.session_state.last_request_time < COOLDOWN_SECONDS:
+        remaining = int(COOLDOWN_SECONDS - (current_time - st.session_state.last_request_time))
+        st.warning(f"⏳ Please wait {remaining} more seconds before trying again.")
+
     else:
+        st.session_state.request_count += 1
+        st.session_state.last_request_time = current_time
+
         with st.spinner("Reviewing your code..."):
             try:
                 result = review_code(code_input)
