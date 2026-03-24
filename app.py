@@ -237,10 +237,10 @@ st.markdown(
     letter-spacing: 0.3px;
     }
     div[data-testid="stElementContainer"]:has(.streamlit_code-editor) {
-    border: 1px solid rgba(255,255,255,0.25);  /* thin clean border */
-    border-radius: 10px;                      /* sharper corners */
+    border: 1px solid rgba(255,255,255,0.25);  
+    border-radius: 5px;                      
     overflow: hidden;
-    background: transparent;                  /* remove white box feel */
+    background: transparent;                  
     padding: 2px;
     }
 
@@ -294,7 +294,7 @@ st.markdown(
 editor_result = code_editor(
     code="def my_function():\n    # paste your Python code here\n    pass",
     lang="python",
-    theme="streamlit-dark",
+    theme="tomorrow_night_bright",
     height=[14, 16],
     options={
         "wrap": True,
