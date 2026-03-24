@@ -26,7 +26,7 @@ An AI-powered Python code review tool that analyses your code across four dimens
 
 ## 🚀 Live Demo
 
-👉 [Try it on HuggingFace Spaces](https://huggingface.co/spaces/ishaAtif/python-code-reviewer) ← 
+👉 [Try it on HuggingFace Spaces](https://huggingface.co/spaces/ishaAtif/python-code-reviewer) 
 
 ## 🛠️ Tech Stack
 
