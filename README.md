@@ -15,7 +15,7 @@ An AI-powered Python code review tool that analyses your code across four dimens
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-ff4b4b)
-![Gemini](https://img.shields.io/badge/Powered%20by-Gemini%20AI-orange)
+![Claude](https://img.shields.io/badge/Powered%20by-Claude%20AI-blueviolet)
 
 ## ✨ Features
 
@@ -26,7 +26,7 @@ An AI-powered Python code review tool that analyses your code across four dimens
 
 ## 🚀 Live Demo
 
-👉 [Try it on HuggingFace Spaces](https://huggingface.co/spaces/ishaAtif/python-code-reviewer) 
+👉 [Try it on HuggingFace Spaces](https://huggingface.co/spaces/ishaAtif/python-code-reviewer)
 
 ## 🛠️ Tech Stack
 
@@ -34,7 +34,7 @@ An AI-powered Python code review tool that analyses your code across four dimens
 |---|---|
 | Python | Core language |
 | Streamlit | Web interface |
-| Google Gemini API | AI code review |
+| Claude API (Haiku) | AI code review |
 | python-dotenv | Environment variable management |
 
 ## ⚙️ Run Locally
@@ -46,8 +46,8 @@ cd python-code-reviewer
 # Install dependencies
 pip install -r requirements.txt
 
-# Add your Gemini API key
-echo "GEMINI_API_KEY=your_key_here" > .env
+# Add your Claude API key
+echo "ANTHROPIC_API_KEY=your_key_here" > .env
 
 # Run the app
 streamlit run app.py
@@ -57,9 +57,10 @@ streamlit run app.py
 ```
 python-code-reviewer/
 ├── app.py            # Streamlit frontend
-├── reviewer.py       # Gemini API logic
+├── reviewer.py       # Claude API logic
 ├── prompts.py        # Prompt templates
 ├── requirements.txt  # Dependencies
+├── Dockerfile        # HuggingFace deployment
 └── .gitignore        # Ignores .env file
 ```
 
